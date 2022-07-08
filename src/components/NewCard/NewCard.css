@@ -1,0 +1,27 @@
+.card {
+    border: 1px solid gray;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+
+.card a {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+}
+
+.card-image {
+    overflow: hidden;
+    margin: 0.5rem;
+}
+
+.card-image img {
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .card a {
+        display: flex;
+        flex-direction: row;
+    }
+}
