@@ -6,7 +6,9 @@ function HomePage() {
     return (
         <div>
             <Navbar/>
-            <NewsList/>
+            <main>
+                <NewsList/>
+            </main>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import NewCard from '../NewCard/NewCard';
+import './NewsList.css';
 
 function NewsList() {
     const apiKey = 'd751ad452b2646ca96892d86f2931b9a'
@@ -11,7 +12,7 @@ function NewsList() {
         .then(data => setArticles(data.articles))
     }, [])
     return (
-        <div>
+        <div className='cards-container'>
             {articles.map((item, index) => (
                 <NewCard article={item} key={index}/>
             ))}
