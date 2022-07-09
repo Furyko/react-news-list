@@ -3,9 +3,13 @@
     margin-right: 0.5rem;;
 }
 
+.results-total {
+    margin-left: 0.5rem;
+}
+
 @media only screen and (min-width: 768px) {
     .cards-container {
         margin-left: 5rem;
-        margin-right: 5rem;;
+        margin-right: 5rem;
     }
 }
