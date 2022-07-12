@@ -29,7 +29,11 @@ function NewsList() {
             { articles.totalResults &&
             <span className='results-total'>Está viendo 10 noticias de {articles.totalResults} resultados</span>
             }
-            { loading ? <div>cargando...</div> : articles.articles && articles.articles.map((item, index) => (
+            { loading ? 
+                <div className='loading-feedback'>
+                    <div className='loading-animation'></div>
+                </div> : 
+            articles.articles && articles.articles.map((item, index) => (
                 <NewCard article={item} key={index}/>
             ))}
         </div>

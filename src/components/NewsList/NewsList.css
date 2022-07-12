@@ -1,6 +1,6 @@
 .cards-container {
     margin-left: 0.5rem;
-    margin-right: 0.5rem;;
+    margin-right: 0.5rem;
 }
 
 .results-total {
@@ -11,5 +11,29 @@
     .cards-container {
         margin-left: 5rem;
         margin-right: 5rem;
+    }
+}
+
+/* Loading Spinner */
+.loading-feedback {
+    display: flex;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0.6rem solid #eee;
+    border-top: 0.6rem solid #666;
+    border-radius: 50%;
+    animation-name: spin-loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin-loading {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
     }
 }
