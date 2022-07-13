@@ -6,6 +6,7 @@ function NewCard({ article }) {
         <div className='card'>
             <a href={ article.url }>
                 <div className='card-info'>
+                    <span>{ article.source.name }</span>
                     <h3>{ article.title }</h3>
                     <p>{ article.description }</p>
                     <p>{ article.publishedAt }</p>
