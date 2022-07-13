@@ -4,7 +4,7 @@ import './NewCard.css';
 function NewCard({ article }) {
     return (
         <div className='card'>
-            <a href={ article.url }>
+            <a href={ article.url } target='_blank' rel='noreferrer'>
                 <div className='card-info'>
                     <span>{ article.source.name }</span>
                     <h3>{ article.title }</h3>
