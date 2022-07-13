@@ -14,14 +14,6 @@
     }
 }
 
-.error-feedback {
-    display: flex;
-    margin: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-}
-
 /* Loading Spinner */
 .loading-feedback {
     display: flex;

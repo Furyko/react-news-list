@@ -4,16 +4,15 @@ import NewCard from '../NewCard/NewCard';
 import './NewsList.css';
 import { SearchContext } from '../../contexts/SearchContext';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 function NewsList() {
     const state = useContext(SearchContext)
     const apiKey = 'd751ad452b2646ca96892d86f2931b9a'
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('')
     useEffect(() => {
         if (state.search) {
-            setErrorMessage('')
             setLoading(true)
             axios.get(`https://newsapi.org/v2/everything?apiKey=${apiKey}&q=${state.search}&pageSize=10&language=es`)
             .then(data => {
@@ -22,7 +21,12 @@ function NewsList() {
             })
             .catch(err => {
                 setLoading(false)
-                setErrorMessage(`${err.message}. Se a producido un error del tipo ${err.code}`)
+                swal({
+                    title: err.message,
+                    text: `Se a producido un error del tipo ${err.code}`,
+                    icon: 'warning',
+                    button: true,
+                })
             })
         }
     }, [state])
@@ -39,11 +43,6 @@ function NewsList() {
             articles.articles && articles.articles.map((item, index) => (
                 <NewCard article={item} key={index}/>
             ))}
-            { errorMessage !== '' && 
-                <div className='error-feedback'>
-                    {errorMessage}
-                </div>
-            }
         </div>
     )
 }
