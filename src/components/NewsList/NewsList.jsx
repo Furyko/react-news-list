@@ -18,13 +18,20 @@ function NewsList() {
             .then(data => {
                 setArticles(data.data);
                 setLoading(false)
+                if (data.data.articles.length === 0) {
+                    swal({
+                        text: 'No hay resultados para esta busqueda',
+                        icon: 'info',
+                        button: true,
+                    })
+                }
             })
             .catch(err => {
                 setLoading(false)
                 swal({
                     title: err.message,
                     text: `Se a producido un error del tipo ${err.code}`,
-                    icon: 'warning',
+                    icon: 'error',
                     button: true,
                 })
             })
