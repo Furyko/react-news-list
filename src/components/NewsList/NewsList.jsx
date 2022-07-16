@@ -56,7 +56,8 @@ function NewsList() {
                     <NewCard article={item} key={index}/>
                 ))}
                 <PaginationBar/>
-            </>}
+            </>
+            }
         </div>
     )
 }
