@@ -3,21 +3,19 @@ import { useEffect, useState, useContext } from 'react';
 import NewCard from '../NewCard/NewCard';
 import './NewsList.css';
 import { SearchContext } from '../../contexts/SearchContext';
-import { PageContext } from '../../contexts/PageContext';
 import axios from 'axios';
 import swal from 'sweetalert';
 import PaginationBar from '../PaginationBar/PaginationBar';
 
 function NewsList() {
     const state = useContext(SearchContext)
-    const pageState = useContext(PageContext)
     const apiKey = 'd751ad452b2646ca96892d86f2931b9a'
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(false)
     useEffect(() => {
-        if (state.search) {
+        if (state.context.search) {
             setLoading(true)
-            axios.get(`https://newsapi.org/v2/everything?apiKey=${apiKey}&q=${state.search}&pageSize=10&language=es&page=${pageState.page}`)
+            axios.get(`https://newsapi.org/v2/everything?apiKey=${apiKey}&q=${state.context.search}&pageSize=10&language=es&page=${state.context.page}`)
             .then(data => {
                 setArticles(data.data);
                 setLoading(false)

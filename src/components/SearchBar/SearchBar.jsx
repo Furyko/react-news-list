@@ -6,7 +6,7 @@ function SearchBar() {
     const state = useContext(SearchContext)
     function onSubmit(e) {
         e.preventDefault();
-        state.setSearch(e.target.search.value)
+        state.setContext({...state.context, search: e.target.search.value})
     }
     function onChange(e) {
         const buttonElement = document.getElementById('search-button')

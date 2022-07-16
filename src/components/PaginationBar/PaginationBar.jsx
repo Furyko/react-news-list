@@ -1,20 +1,28 @@
 import React, { useContext } from 'react';
-import { PageContext } from '../../contexts/PageContext';
+import { SearchContext } from '../../contexts/SearchContext';
 import './PaginationBar.css';
 
 function PaginationBar() {
-    const pageState = useContext(PageContext)
+    const state = useContext(SearchContext)
     return (
         <div className='pagination-container'>
-            { pageState.page !== 1 &&
+            { state.context.page !== 1 &&
             <>
-                <button onClick={() => {pageState.setPage(pageState.page - 1)}}>←</button>
-                <button onClick={() => {pageState.setPage(pageState.page - 1)}}>{ pageState.page - 1 }</button>
+                <button onClick={() => {state.setContext({...state.context, page: state.context.page - 1})}}>
+                    ←
+                </button>
+                <button onClick={() => {state.setState({...state.context, page: state.context.page - 1})}}>
+                    { state.context.page - 1 }
+                </button>
             </>
             }
-            <button onClick={() => {pageState.setPage(2)}}>{ pageState.page }</button>
-            <button onClick={() => {pageState.setPage(pageState.page + 1)}}>{ pageState.page + 1 }</button>
-            <button onClick={() => {pageState.setPage(pageState.page + 1)}}>→</button>
+            <button>{ state.context.page }</button>
+            <button onClick={() => {state.setContext({...state.context, page: state.context.page + 1})}}>
+                { state.context.page + 1 }
+            </button>
+            <button onClick={() => {state.setContext({...state.context, page: state.context.page + 1})}}>
+                →
+            </button>
         </div>
     )
 }
