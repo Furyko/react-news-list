@@ -50,10 +50,13 @@ function NewsList() {
                 <div className='loading-feedback'>
                     <div className='loading-animation'></div>
                 </div> : 
-            articles.articles && articles.articles.map((item, index) => (
-                <NewCard article={item} key={index}/>
-            ))}
-            <PaginationBar/>
+            articles.articles &&
+            <>
+                {articles.articles.map((item, index) => (
+                    <NewCard article={item} key={index}/>
+                ))}
+                <PaginationBar/>
+            </>}
         </div>
     )
 }
