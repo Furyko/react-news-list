@@ -23,9 +23,14 @@ function SearchBar() {
                 type='text' 
                 name='search' 
                 placeholder='Introduzca una busqueda (ej: bitcoin)' 
-                className='search-input'
+                className='search-input rounded-border'
                 onChange={onChange}/>
-                <input type='submit' value='Buscar' className='search-button' id='search-button' disabled/>
+                <input 
+                type='submit' 
+                value='Buscar' 
+                className='search-button rounded-border' 
+                id='search-button' 
+                disabled/>
             </form>
         </div>
     )

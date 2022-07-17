@@ -11,12 +11,28 @@
     margin: 0.5rem;
     margin-left: 0;
     margin-right: 0;
+    height: 2rem;
+    font-size: 1.2rem;
+    border: 1px solid gray;
 }
 
 .search-button {
     margin: 0.5rem;
     margin-left: auto;
     margin-right: auto;
+    padding: 0.5rem;
+    background-color: #008584;
+    color: white;
+    font-size: 1rem;
+    border: 1px solid gray;
+}
+
+.search-button:active {
+    background-color: #009999;
+}
+
+.search-button:disabled {
+    background-color: #acacac;
 }
 
 @media only screen and (min-width: 768px) {
