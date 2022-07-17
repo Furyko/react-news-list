@@ -3,3 +3,16 @@
     justify-content: center;
     margin: 2rem;
 }
+
+.pagination-button {
+    height: 2rem;
+    width: 2rem;
+    background-color: white;
+    margin: 0;
+    font-weight: bold;
+    border: 1px solid gray;
+}
+
+.pagination-button:active {
+    background-color: #008584;
+}
