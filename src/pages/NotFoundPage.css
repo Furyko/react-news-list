@@ -22,4 +22,12 @@ h1, h2, button {
     border: 1px solid gray;
     border-radius: 1rem;
     padding: 1rem;
+    background-color: white;
+}
+
+.not-found-button {
+    background-color: #008584;
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem;
 }

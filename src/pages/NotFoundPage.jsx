@@ -8,7 +8,7 @@ function NotFoundPage() {
                 <h1>404</h1>
                 <h2>Not found</h2>
                 <h3>Recurso no encontrado :(</h3>
-                <a href='/'><button>Volver al inicio</button></a>
+                <a href='/'><button className='not-found-button rounded-border'>Volver al inicio</button></a>
             </div>
         </div>
     )
