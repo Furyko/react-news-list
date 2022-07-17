@@ -4,6 +4,7 @@ import NewsList from '../components/NewsList/NewsList';
 import SearchBar from '../components/SearchBar/SearchBar';
 import { SearchContext } from '../contexts/SearchContext';
 import { PageContext } from '../contexts/PageContext';
+import Footer from '../components/Footer/Footer';
 
 function HomePage() {
     const [search, setSearch] = useState('');
@@ -19,6 +20,7 @@ function HomePage() {
                     </PageContext.Provider>
                 </SearchContext.Provider>
             </main>
+            <Footer/>
         </div>
     )
 }
