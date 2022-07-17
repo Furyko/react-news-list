@@ -39,7 +39,7 @@ function NewsList() {
                 })
             })
         }
-    }, [state])
+    }, [state, pageState.page])
     return (
         <div className='cards-container'>
             { articles.totalResults && !loading ?
