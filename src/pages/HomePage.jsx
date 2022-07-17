@@ -10,7 +10,7 @@ function HomePage() {
     const [search, setSearch] = useState('');
     const [page, setPage] = useState(1);
     return (
-        <div>
+        <>
             <Navbar/>
             <main>
                 <SearchContext.Provider value={{search: search, setSearch: setSearch}}>
@@ -21,7 +21,7 @@ function HomePage() {
                 </SearchContext.Provider>
             </main>
             <Footer/>
-        </div>
+        </>
     )
 }
 
